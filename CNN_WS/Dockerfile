@@ -18,4 +18,4 @@ RUN pip install opencv-python
 
 RUN pip install pandas 
 
-CMD ["python", "mnist.py"]
+CMD ["python", "code.py"]
