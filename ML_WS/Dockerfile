@@ -18,4 +18,4 @@ RUN pip install seaborn
 
 RUN pip install pandas 
 
-CMD ["python", "titanic.py"]
+CMD ["python", "code.py"]
