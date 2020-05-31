@@ -96,7 +96,7 @@ model.compile(optimizer=Adam(), loss='categorical_crossentropy',
 # In[44]:
 
 
-h = model.fit(X_train, Y_train, epochs=3)
+h = model.fit(X_train, Y_train, epochs=2)
 
 
 # In[64]:
