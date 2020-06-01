@@ -6,21 +6,21 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation, Flatten
-from keras.optimizers import Adam
-from keras.layers.normalization import BatchNormalization
-from keras.utils import np_utils
-from keras.layers import Conv2D, MaxPooling2D, ZeroPadding2D, GlobalAveragePooling2D
-from keras.layers.advanced_activations import LeakyReLU 
-from keras.preprocessing.image import ImageDataGenerator
+import tensorflow
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras import utils
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, ZeroPadding2D, GlobalAveragePooling2D
+from tensorflow.keras.layers import LeakyReLU 
 import os
 
 
 # In[2]:
-
-
 (X_train, y_train), (X_test, y_test) = mnist.load_data('mymnist.db')
 print("X_train original shape", X_train.shape)
 print("y_train original shape", y_train.shape)
@@ -44,14 +44,14 @@ X_train.shape
 
 number_of_classes = 10
 
-Y_train = np_utils.to_categorical(y_train, number_of_classes)
-Y_test = np_utils.to_categorical(y_test, number_of_classes)
+Y_train = utils.to_categorical(y_train, number_of_classes)
+Y_test =  utils.to_categorical(y_test, number_of_classes)
 
 y_train[0], Y_train[0]
 
 # In[34]:
 
-model = Sequential()
+model = keras.Sequential()
 
 model.add(Conv2D(32, (3, 3), input_shape=(28,28,1)))
 model.add(Activation('relu'))
@@ -85,6 +85,7 @@ model.add(Activation('softmax'))
 
 model.summary()
 # In[42]:
+
 
 
 
