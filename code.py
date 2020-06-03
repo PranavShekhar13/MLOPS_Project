@@ -114,7 +114,7 @@ print(test_accuracy)
 text = h.history
 accuracy = text['acc'][1] * 100
 accuracy = int(accuracy)
-f = open("/root/Desktop/mlops/CNN_WS/accuracy.txt", "w+")
+f = open("/CNN_WS/accuracy.txt", "w+")
 f.write(str(accuracy))
 f.close()
 
